@@ -1,4 +1,5 @@
-apply plugin: 'java'
+apply plugin:'application'
+
 
 buildscript {
   repositories {
@@ -13,10 +14,17 @@ repositories {
 }
 
 configurations {
-  provided
+  apt
 }
 
 dependencies {
   compile project(':annotations')
-  provided project(':processor1')
+  apt project(':processor1')
 }
+
+compileJava {
+  options.annotationProcessorPath = configurations.apt
+  options.compilerArgs << "-processor" << "com.example.Processor1" << "-verbose"
+}
+
+mainClassName = "com.example.Main"
