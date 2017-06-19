@@ -1,0 +1,22 @@
+apply plugin: 'java'
+
+buildscript {
+  repositories {
+    mavenCentral()
+    jcenter()
+  }
+}
+
+repositories {
+  mavenCentral()
+  jcenter()
+}
+
+configurations {
+  provided
+}
+
+dependencies {
+  compile project(':annotations')
+  provided project(':processor1')
+}

@@ -1,0 +1,6 @@
+include ':annotations'
+include ':processor1'
+include ':app'
+
+
+rootProject.name = 'incremental-di-test'
