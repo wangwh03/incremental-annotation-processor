@@ -25,6 +25,7 @@ dependencies {
 compileJava {
   options.annotationProcessorPath = configurations.apt
   options.compilerArgs << "-processor" << "com.example.Processor1" << "-verbose"
+  options.incremental = true
 }
 
 mainClassName = "com.example.Main"
