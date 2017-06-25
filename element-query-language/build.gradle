@@ -1,0 +1,22 @@
+apply plugin: 'java'
+
+buildscript {
+  repositories {
+    mavenCentral()
+    jcenter()
+  }
+}
+
+repositories {
+  mavenCentral()
+  jcenter()
+}
+
+dependencies {
+  //As this lib is used by incrap,
+  //we should not use any compile scope dependency
+  testCompile project( ":annotations" )
+  testCompile deps.junit
+  testCompile deps.truth
+  testCompile deps.compiletesting
+}

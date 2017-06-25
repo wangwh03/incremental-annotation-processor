@@ -1,4 +1,15 @@
 buildscript {
+  buildscript {
+    ext.versions = [
+    ]
+
+    ext.deps = [
+        javapoet: 'com.squareup:javapoet:1.9.0',
+        junit: 'junit:junit:4.12',
+        truth: 'com.google.truth:truth:0.34',
+        compiletesting: 'com.google.testing.compile:compile-testing:0.11',
+    ]
+  }
   repositories {
     mavenCentral()
     jcenter()
@@ -9,19 +20,3 @@ repositories {
   mavenCentral()
   jcenter()
 }
-
-
-ext.deps = [// Common
-            inject              : 'javax.inject:javax.inject:1',
-
-            // Compiler
-            javapoet            : 'com.squareup:javapoet:1.4.0',
-
-            // Test dependencies
-            junit               : 'junit:junit:4.12',
-            hamcrest            : 'org.hamcrest:java-hamcrest:2.0.0.0',
-            truth               : 'com.google.truth:truth:0.27',
-            compiletesting      : 'com.google.testing.compile:compile-testing:0.7',
-            easymock            : 'org.easymock:easymock:3.4',
-            powermock           : 'org.powermock:powermock-easymock-release-full:1.6.4',
-            robolectric         : 'org.robolectric:robolectric:3.0',]
